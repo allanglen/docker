@@ -1,3 +1,10 @@
 #!/bin/sh
 cp /config/* /root/.unison
-exec unison default -batch -repeat 5
+
+if [ -z "$REPEAT" ]; then
+  exec unison default -batch
+else
+  exec unison default -batch -repeat $REPEAT
+fi 
+
+
