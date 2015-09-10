@@ -1,10 +1,8 @@
 #!/bin/sh
-cp /config/* /root/.unison
-
-if [ -z "$REPEAT" ]; then
+if [ -z "$OPTIONS" ]; then
   exec unison default -batch
 else
-  exec unison default -batch -repeat $REPEAT
+  exec unison default -batch $OPTIONS
 fi 
 
 
